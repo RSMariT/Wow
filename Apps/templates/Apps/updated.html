@@ -1,0 +1,48 @@
+{% load static %}
+
+
+{% block content %}
+<center>
+
+
+    <h1>Total Users {{users|length}}</h1>
+    <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>User Email</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+           
+        </tr>
+
+        {% endfor %}
+        </table>
+
+        <table border="1" cellspacing="0" cellpadding="5">
+            <tr>
+            <th>Updated_ID</th>
+            <th>Updated Name</th>
+            <th>Updated Email</th>
+
+        </tr>
+       <h1>Updated user {{updated|length}}</h1>
+        {% for upuser in updated %}
+        <tr>
+            <td>{{upuser.id}}</td>
+            <td>{{upuser.username}}</td>
+            <td>{{upuser.email}}</td>
+
+        </tr>
+        
+        {% endfor%}
+    </table>
+   
+    
+</center>
+
+{% endblock %}

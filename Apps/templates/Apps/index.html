@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Crud Operations</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+    {% block content %}
+
+    {% endblock %}
+    <center><h1 style="margin-top:40px;">User Dashboard</h1></center>
+    <div class="button">
+        <a href="/insert/"><button class="btn" id="insert">Insert</button></a>
+        <a href="/display/"><button class="btn" id="display">Display<p id="count" style="color: black;">{{users_count}} users</p></button></a>
+        <a href="/updated/"><button class="btn" id="update">Update<p id="count" style="color: black;">{{updated_count}} users</p> </button></a>
+        <a href="/deleted/"><button class="btn" id="delete">Delete <p id="count" style="color: black;">{{del_count}} users</p></button></a>
+    </div>
+</body>
+
+</html>

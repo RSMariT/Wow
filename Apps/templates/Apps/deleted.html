@@ -1,0 +1,28 @@
+{% load static %}
+
+
+{% block content %}
+<center>
+
+
+    <h1>Total Users {{deluser|length}}</h1>
+    <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+            <th>Delete_User_ID</th>
+            <th>Delete_User_Name</th>
+            <th>Delete_User_Email</th>
+        </tr>
+        {% for delete in deluser %}
+        <tr>
+            <td>{{delete.id}}</td>
+            <td>{{delete.username}}</td>
+            <td>{{delete.email}}</td>
+           
+        </tr>
+
+        {% endfor %}
+       
+    </table>
+</center>
+
+{% endblock %}

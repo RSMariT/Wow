@@ -1,0 +1,31 @@
+{% load static %}
+
+
+{% block content %}
+<center>
+
+
+    <h1>Total Users {{users|length}}</h1>
+    <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>User Email</th>
+            <th>Actions</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+                       
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td><a href="{% url 'update' user.id %}"><button class="dis-btn" id="edit" style="border: none; background-color : blue; color:white;padding :10px 50px;border-radius:10px;cursor:pointer; ">Edit</button></a><br>
+                <a href="{% url 'delete' user.id %}"><button class="dis-btn" id="del" style="border: none; background-color : red; color:white;padding :10px 40px;margin-top:10px;border-radius:10px;cursor:pointer;">Delete</button></a></td>
+        </tr>
+       
+        {% endfor %}
+    </table>
+    
+</center>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% load static %}
+
+ 
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+{% block content %}
+
+<form class="form" method="post">
+    {% csrf_token %}
+    <p class="title">Register </p>
+    {% for message in messages %}
+    {% if message.tags == 'error' %}
+    <p id="error">{{message}}</p>
+    {% endif %}
+    {% if message.tags == 'success' %}
+    <p id="sucess">{{message}}</p>
+    {% endif %}
+{% endfor %}
+
+
+    <label>
+        <input class="input" type="text" name="username" placeholder="Username">
+
+    </label>
+
+
+
+    <label>
+        <input class="input" type="email" name="email" placeholder="Email">
+    </label>
+
+    <label>
+        <input class="input" type="password" name="password" placeholder="Password">
+    </label>
+    <label>
+        <input class="input" type="password" name="confirmpassword" placeholder="Confirm Password">
+    </label>
+    <button class="submit">Submit</button>
+    <p class="signin">Already have an acount ? <a href="/login/">Signin</a> </p>
+</form>
+
+
+
+{% endblock %}

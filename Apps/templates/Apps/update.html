@@ -1,0 +1,38 @@
+
+
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+<h1>{{user.name}}</h1>
+{% block content %}
+
+<form class="form" method="post">
+    {% csrf_token %}
+    <p class="title">Update Page </p>
+    {% if messages %}
+    {% for message in messages %}
+    <p class="{messages-tags}">{{message}}</p>
+    {% endfor %}
+    {% endif %}
+    <div class="flex">
+        <label>
+            <input class="input" type="text" name="username" placeholder="Username"  required>
+        </label>
+
+    </div>
+
+    <label>
+        <input class="input" type="email" name="email" placeholder="" readonly value = {{user.email}}>
+    </label>
+
+    
+   
+    <button class="submit">Change</button>
+</form>
+
+
+
+{% endblock %}

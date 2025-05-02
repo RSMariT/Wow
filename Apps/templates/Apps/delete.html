@@ -1,0 +1,12 @@
+
+{% block content %}
+<h1>delete this {{user.username}}</h1>
+<form method="post">
+
+    {% csrf_token %}
+
+    <button style="background-color: red; border:none; color:white;">Delete</button>
+</form>
+    <a href="/display/"><button style="background-color: green; border:none; color:white;">cancle</button></a>
+
+{% endblock %}
